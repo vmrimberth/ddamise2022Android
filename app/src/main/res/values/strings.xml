@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Ddamise2022</string>
+
+    <string name="message_location">La aplicación esta haciendo uso de la ubicación</string>
+    <string name="my_location">Mi Posición</string>
+
+    <string name="search">Buscar</string>
+    <string name="routes">Rutas</string>
+    <string name="firebase">Firebase</string>
+    <string name="add">Agregar</string>
+    <string name="clear">Limpiar</string>
+    <string name="username">Nombre de Usuario</string>
+
+    <string name="default_notification_channel_id" translatable="false">ddamise2022_channel</string>
+    <string name="default_notification_foreground_channel_id" translatable="false">ddamise2022_channel_foreground</string>
+    <string name="default_notification_channel_description" translatable="false">Ddamise2022 Channel</string>
+
+
+    <!-- Google ID -->
+    <string name="google_map_key" translatable="false">AIzaSyDjySquq0quaBdPQipsQXAjWA1R0nyDXQQ</string>
+
+</resources>

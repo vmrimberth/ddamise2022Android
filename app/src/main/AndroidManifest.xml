@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.agos.ddamise2022">
+    <!-- internet access -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- location access -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- google maps services -->
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="com.agos.ddamise2022.MAPS_RECEIVE" />
+
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Ddamise2022"
+        tools:targetApi="31">
+
+        <meta-data
+            android:name="com.agos.ddamise2022.ENVIRONMENT"
+            android:value="${environment}" />
+        <meta-data
+            android:name="com.agos.ddamise2022.URLBASE"
+            android:value="${urlBase}" />
+        <meta-data
+            android:name="com.agos.ddamise2022.DEFAULTZOOM"
+            android:value="${defaultZoom}" />
+        <meta-data
+            android:name="com.agos.ddamise2022.LOCATIONUPDATETIME"
+            android:value="${locationUpdateTime}" />
+        <meta-data
+            android:name="com.agos.ddamise2022.LOCATIONUPDATEDISTANCE"
+            android:value="${locationUpdateDistance}" /> <!-- Google Play Services -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_map_key" />
+
+        <activity
+            android:name=".ui.ASplash"
+            android:exported="true"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/Theme.Ddamise2022.NoActionBar"
+            android:windowSoftInputMode="adjustPan|stateUnchanged">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.AMain"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/Theme.Ddamise2022.NoActionBar"
+            android:windowSoftInputMode="adjustPan|stateUnchanged" />
+
+        <activity
+            android:name=".ui.AFirebase"
+            android:parentActivityName=".ui.AMain"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/Theme.Ddamise2022.NoActionBar"
+            android:windowSoftInputMode="adjustPan|stateUnchanged" />
+
+        <activity
+            android:name=".ui.ASearch"
+            android:parentActivityName=".ui.AMain"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/Theme.Ddamise2022.NoActionBar"
+            android:windowSoftInputMode="adjustPan|stateUnchanged" />
+
+        <activity
+            android:name=".ui.ARoutes"
+            android:parentActivityName=".ui.AMain"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/Theme.Ddamise2022.NoActionBar"
+            android:windowSoftInputMode="adjustPan|stateUnchanged" />
+
+
+        <!-- Services -->
+        <service
+            android:name=".service.Foreground"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
+
+</manifest>
